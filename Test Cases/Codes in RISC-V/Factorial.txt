@@ -1,0 +1,12 @@
+addi a0, x0, 5
+addi a1, x0, 0
+addi a2, x0, 1
+jal ra, fact
+fence
+fact:
+Loop:
+addi a1, a1, 1
+mult a2, a2, a1
+blt a1, a0, Loop
+addi a0, a2, 0
+jalr x0, 0(ra)
