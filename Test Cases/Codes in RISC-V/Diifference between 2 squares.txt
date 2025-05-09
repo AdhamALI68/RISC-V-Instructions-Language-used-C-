@@ -1,0 +1,14 @@
+addi x5, x0, 5
+addi x6, x0, 3
+addi x11, x0, 0
+blt x5, x6, L1
+mult x5, x5, x5
+mult x6, x6, x6
+sub x11, x5, x6
+beq x0, x0, Done
+L1:
+mult x5, x5, x5
+mult x6, x6, x6
+sub x11, x6, x5
+Done:
+ecall

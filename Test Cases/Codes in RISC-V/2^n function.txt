@@ -1,0 +1,14 @@
+addi x5, x0, 9
+addi x6, x0, 2
+addi sp, sp, -8
+sw x5, 0(sp)
+sw x6, 4(sp)
+jal ra, two
+ebreak
+two:
+lw x5, 0(sp)
+lw x6, 4(sp)
+addi sp, sp, 8
+addi x5, x5, -1
+sll x10, x6, x5
+jalr x0, 0(ra)
